@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Safar finds compatible travellers, smarter pickup points, and fairer shared rides.">
+  <title>Safar — Share the route, not the hassle</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav shell">
+    <a class="brand" href="#top" aria-label="Safar home"><span class="brand-mark">S</span><span>Safar</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#how">How it works</a><a href="#safety">Safety</a><a href="#impact">Impact</a>
+    </nav>
+    <button class="nav-cta" data-scroll="matcher">Find a ride <span>↗</span></button>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" id="top">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> Smarter shared mobility</div>
+        <h1>Share the route.<br><em>Keep your freedom.</em></h1>
+        <p>Safar matches you with verified travellers going your way—then finds a pickup point that saves money without adding a frustrating detour.</p>
+        <div class="hero-actions">
+          <button class="primary" data-scroll="matcher">Try a sample match <span>→</span></button>
+          <a href="#how">See how it works</a>
+        </div>
+        <div class="trust-row"><span>✓ Verified profiles</span><span>✓ Transparent detours</span><span>✓ You choose every match</span></div>
+      </div>
+      <div class="route-card" aria-label="Illustrative shared route from Koramangala to Bengaluru Airport">
+        <div class="map-top"><span>Tonight · 8:30 PM</span><span class="live">LIVE MATCH</span></div>
+        <div class="map-canvas">
+          <div class="grid"></div>
+          <svg class="route" viewBox="0 0 520 420" role="img" aria-label="Two routes merging into one shared journey">
+            <path class="road" d="M48 342 C130 290 140 188 245 218 S380 168 475 55"/>
+            <path class="road alt" d="M75 90 C126 126 155 175 245 218"/>
+            <path class="route-main" d="M48 342 C130 290 140 188 245 218 S380 168 475 55"/>
+            <path class="route-alt" d="M75 90 C126 126 155 175 245 218"/>
+          </svg>
+          <div class="pin a"><b>A</b><small>Koramangala</small></div>
+          <div class="pin b"><b>B</b><small>Indiranagar</small></div>
+          <div class="pin meet"><b>⇄</b><small>Shared pickup</small></div>
+          <div class="pin end"><b>✦</b><small>BLR Airport</small></div>
+          <div class="overlap"><strong>78%</strong><span>route overlap</span></div>
+        </div>
+        <div class="map-summary"><div><small>You save</small><strong>₹286</strong></div><div><small>Extra time</small><strong>+7 min</strong></div><div><small>CO₂ avoided</small><strong>3.4 kg</strong></div></div>
+      </div>
+    </section>
+
+    <section class="matcher-wrap" id="matcher">
+      <div class="shell matcher-grid">
+        <div class="matcher-copy">
+          <span class="section-no">01 / LIVE CONCEPT</span>
+          <h2>See the tradeoff<br>before you commit.</h2>
+          <p>This prototype demonstrates Safar’s core promise: every match explains the savings, walking, delay, and safety conditions upfront.</p>
+          <div class="mini-note"><span>◎</span><div><strong>Your destination stays private</strong><br><small>Exact trip details appear only after both riders confirm.</small></div></div>
+        </div>
+        <form class="matcher" id="match-form">
+          <div class="field-row">
+            <label>From<input id="from" value="Koramangala, Bengaluru" required></label>
+            <button type="button" class="swap" aria-label="Swap locations">⇄</button>
+            <label>To<input id="to" value="Kempegowda International Airport" required></label>
+          </div>
+          <div class="field-row three">
+            <label>Leaving<select id="time"><option>Tonight, 8:30 PM</option><option>Tomorrow, 7:30 AM</option><option>Tomorrow, 6:00 PM</option></select></label>
+            <label>Flexible by<select id="flex"><option>± 15 minutes</option><option>± 30 minutes</option><option>± 45 minutes</option></select></label>
+            <label>Seats<select><option>1 passenger</option><option>2 passengers</option><option>3 passengers</option></select></label>
+          </div>
+          <fieldset><legend>Ride preferences</legend><div class="chips">
+            <label><input type="checkbox" id="verified" checked><span>✓ Verified only</span></label>
+            <label><input type="checkbox" id="women"><span>♀ Women only</span></label>
+            <label><input type="checkbox" id="quiet"><span>☾ Quiet ride</span></label>
+            <label><input type="checkbox" id="luggage"><span>▣ Extra luggage</span></label>
+          </div></fieldset>
+          <button class="primary full" type="submit"><span id="button-text">Find compatible rides</span><span>→</span></button>
+          <div class="result" id="result" hidden aria-live="polite">
+            <div class="result-head"><div class="avatar">AM</div><div><strong>Ananya & Mohit</strong><span>★ 4.9 · ID verified · 42 shared trips</span></div><div class="match-score">92%<small>match</small></div></div>
+            <div class="result-stats"><div><small>Your fare</small><b>₹498</b><s>₹784</s></div><div><small>Walk</small><b>4 min</b><span>280 m</span></div><div><small>Added time</small><b>7 min</b><span>within limit</span></div></div>
+            <div class="result-foot"><span>Pickup: Sony World Signal · well-lit & monitored</span><button type="button">Review match</button></div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="steps shell" id="how">
+      <div class="section-heading"><span class="section-no">02 / HOW IT WORKS</span><h2>One direction.<br>Better together.</h2><p>Safar looks beyond identical destinations. It finds journeys that naturally fit together.</p></div>
+      <div class="step-list">
+        <article><span>01</span><div class="step-icon">⌖</div><h3>Tell us your journey</h3><p>Add where you’re going, when you want to leave, and how flexible you can be.</p></article>
+        <article><span>02</span><div class="step-icon">⌁</div><h3>We find the overlap</h3><p>Routes, timing, detour tolerance, group size, and ride preferences are considered together.</p></article>
+        <article><span>03</span><div class="step-icon">✓</div><h3>You decide</h3><p>Compare fare, added time, pickup walk, safety signals, and emissions before confirming.</p></article>
+      </div>
+    </section>
+
+    <section class="safety" id="safety"><div class="shell safety-grid">
+      <div class="safety-visual"><div class="phone"><div class="phone-top">Trip safety <span>•••</span></div><div class="shield">✓</div><h3>Your ride is on track</h3><p>Route and driving patterns are being monitored.</p><div class="status"><span>Route status</span><b>Normal</b></div><div class="status"><span>Trusted contact</span><b>Sharing</b></div><button>Open safety toolkit</button></div><div class="orbit one">24/7<br><small>monitoring</small></div><div class="orbit two">SOS</div></div>
+      <div><span class="section-no light">03 / SAFETY BY DESIGN</span><h2>A safer journey is<br>part of the route.</h2><p>Safety isn’t a separate feature. Safar evaluates the trip before pickup and stays attentive until everyone arrives.</p>
+        <ul class="safety-list"><li><b>Safer pickup suggestions</b><span>Prefer well-lit, legal, easy-to-find meeting points.</span></li><li><b>Unexpected change detection</b><span>Flag unusual route deviations or prolonged stops.</span></li><li><b>Privacy-first matching</b><span>Hide exact destinations and personal contact details until consent.</span></li></ul>
+      </div>
+    </div></section>
+
+    <section class="impact shell" id="impact"><div class="impact-copy"><span class="section-no">04 / THE BIGGER JOURNEY</span><h2>Less traffic begins<br>with fewer empty seats.</h2><p>Safar aims to make shared travel feel like the obvious choice: economical enough to matter, predictable enough to trust, and convenient enough to repeat.</p></div><div class="impact-cards"><article><strong>₹286</strong><span>illustrative saving on an airport ride</span></article><article><strong>3.4 kg</strong><span>illustrative CO₂ avoided by sharing</span></article><article><strong>1 route</strong><span>instead of two vehicles taking similar journeys</span></article></div><small class="disclaimer">Prototype figures are illustrative and will vary by city, route, demand, and vehicle.</small></section>
+
+    <section class="cta"><div class="shell"><span>READY WHEN YOU ARE</span><h2>Your route could be<br>someone else’s too.</h2><button class="primary pale" data-scroll="matcher">Find your match <span>→</span></button></div></section>
+  </main>
+  <footer class="shell"><a class="brand" href="#top"><span class="brand-mark">S</span><span>Safar</span></a><p>Smarter shared journeys for modern cities.</p><div><a href="#how">How it works</a><a href="#safety">Safety</a><a href="#impact">Impact</a></div></footer>
+  <script src="app.js"></script>
+</body>
+</html>
