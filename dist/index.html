@@ -10,8 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="features.css">
+  <link rel="stylesheet" href="dark.css">
 </head>
-<body>
+<body class="loading">
+  <div class="loader" id="loader" role="status" aria-label="Loading Safar">
+    <div class="loader-scene"><div class="loader-sky"></div><div class="speed-lines"></div><div class="loader-road"></div></div>
+    <div class="loader-copy"><div class="loader-logo">SAFAR<span>●</span></div><div class="loader-status">ROUTING YOUR JOURNEY</div><div class="loader-progress"><i></i></div></div>
+    <div class="race-car" aria-hidden="true"><svg viewBox="0 0 620 240" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="carPaint" x1="0" x2="1"><stop stop-color="#baff58"/><stop offset=".55" stop-color="#4ff0a6"/><stop offset="1" stop-color="#13885b"/></linearGradient></defs><ellipse cx="310" cy="207" rx="240" ry="20" fill="#000" opacity=".65"/><g fill="#080b0a"><ellipse cx="112" cy="169" rx="47" ry="54"/><ellipse cx="508" cy="169" rx="47" ry="54"/><ellipse cx="170" cy="84" rx="35" ry="45"/><ellipse cx="450" cy="84" rx="35" ry="45"/></g><path d="M156 183 L190 112 264 88 294 31h32l30 57 74 24 34 71-57 1-25-51H238l-25 51z" fill="url(#carPaint)"/><path d="M274 92l22-58h28l22 58-28 21h-22z" fill="#09120e"/><path d="M250 128h120l-18 59h-84z" fill="#d9ff72"/><path d="M57 137h128l20 31H52zM435 137h128l5 31H415z" fill="#16231d"/><path d="M232 184h156v22H232z" fill="#4ff0a6"/><circle cx="310" cy="111" r="13" fill="#ff7048"/></svg></div>
+  </div>
   <a class="skip" href="#main">Skip to content</a>
   <header class="nav shell">
     <a class="brand" href="#top" aria-label="Safar home"><span class="brand-mark">S</span><span>Safar</span></a>

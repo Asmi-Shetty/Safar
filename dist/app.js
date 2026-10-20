@@ -1,5 +1,9 @@
 document.querySelectorAll('[data-scroll]').forEach(button=>button.addEventListener('click',()=>document.getElementById(button.dataset.scroll).scrollIntoView({behavior:'smooth'})));
 
+const loader=document.getElementById('loader');
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+window.addEventListener('load',()=>setTimeout(()=>{loader.classList.add('is-hidden');document.body.classList.remove('loading');setTimeout(()=>loader.remove(),700)},reduceMotion?250:2850));
+
 const form=document.getElementById('match-form');
 const result=document.getElementById('result');
 const buttonText=document.getElementById('button-text');
