@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="features.css">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -22,6 +23,7 @@
 
   <main id="main">
     <section class="hero shell" id="top">
+      <div class="hero-3d" aria-hidden="true"><i class="orb orb-a"></i><i class="orb orb-b"></i><i class="orb orb-c"></i><div class="road-ring ring-a"></div><div class="road-ring ring-b"></div></div>
       <div class="hero-copy">
         <div class="eyebrow"><span class="pulse"></span> Smarter shared mobility</div>
         <h1>Share the route.<br><em>Keep your freedom.</em></h1>
@@ -52,6 +54,12 @@
       </div>
     </section>
 
+    <section class="quick-actions shell" aria-label="Quick ride actions">
+      <button data-scroll="matcher"><b>⌖</b><span><strong>Ride now</strong><small>Get picked up nearby</small></span></button>
+      <button data-action="schedule"><b>◷</b><span><strong>Schedule</strong><small>Plan up to 30 days ahead</small></span></button>
+      <button data-action="saved"><b>☆</b><span><strong>Saved places</strong><small>Home, work and favourites</small></span></button>
+      <button data-action="history"><b>↺</b><span><strong>Your trips</strong><small>Bookings on this device</small></span></button>
+    </section>
     <section class="matcher-wrap" id="matcher">
       <div class="shell matcher-grid">
         <div class="matcher-copy">
@@ -71,6 +79,12 @@
             <label>Flexible by<select id="flex"><option>± 15 minutes</option><option>± 30 minutes</option><option>± 45 minutes</option></select></label>
             <label>Seats<select><option>1 passenger</option><option>2 passengers</option><option>3 passengers</option></select></label>
           </div>
+          <fieldset class="ride-types"><legend>Choose your ride</legend><div class="vehicle-grid">
+            <label><input type="radio" name="vehicle" value="Mini" data-fare="498" checked><span><b>🚗</b><strong>Mini</strong><small>4 seats · ₹498</small></span></label>
+            <label><input type="radio" name="vehicle" value="Auto" data-fare="389"><span><b>🛺</b><strong>Auto</strong><small>3 seats · ₹389</small></span></label>
+            <label><input type="radio" name="vehicle" value="Prime" data-fare="689"><span><b>🚙</b><strong>Prime</strong><small>4 seats · ₹689</small></span></label>
+            <label><input type="radio" name="vehicle" value="XL" data-fare="899"><span><b>🚐</b><strong>XL</strong><small>6 seats · ₹899</small></span></label>
+          </div></fieldset>
           <fieldset><legend>Ride preferences</legend><div class="chips">
             <label><input type="checkbox" id="verified" checked><span>✓ Verified only</span></label>
             <label><input type="checkbox" id="women"><span>♀ Women only</span></label>
@@ -81,9 +95,21 @@
           <div class="result" id="result" hidden aria-live="polite">
             <div class="result-head"><div class="avatar">AM</div><div><strong>Ananya & Mohit</strong><span>★ 4.9 · ID verified · 42 shared trips</span></div><div class="match-score">92%<small>match</small></div></div>
             <div class="result-stats"><div><small>Your fare</small><b>₹498</b><s>₹784</s></div><div><small>Walk</small><b>4 min</b><span>280 m</span></div><div><small>Added time</small><b>7 min</b><span>within limit</span></div></div>
-            <div class="result-foot"><span>Pickup: Sony World Signal · well-lit & monitored</span><button type="button">Review match</button></div>
+            <div class="result-foot"><span>Pickup: Sony World Signal · well-lit & monitored</span><button type="button" id="confirm-ride">Confirm ride</button></div>
           </div>
         </form>
+      </div>
+    </section>
+
+    <section class="services shell" id="services">
+      <div class="section-heading"><span class="section-no">02 / EVERYTHING IN ONE PLACE</span><h2>More than a ride<br>from A to B.</h2><p>Everyday travel tools designed around clarity, control, and safer decisions.</p></div>
+      <div class="service-grid">
+        <article><i>◷</i><h3>Ride scheduling</h3><p>Reserve a pickup in advance and keep the plan visible in your trip list.</p><button data-action="schedule">Schedule a ride →</button></article>
+        <article><i>⚡</i><h3>Live fare choices</h3><p>Compare Mini, Auto, Prime, and XL estimates before choosing.</p><button data-scroll="matcher">Compare fares →</button></article>
+        <article><i>♜</i><h3>Safety centre</h3><p>Trusted contacts, route checks, an SOS shortcut, and shareable trip details.</p><button data-action="safety">Open safety centre →</button></article>
+        <article><i>★</i><h3>Saved places</h3><p>Keep frequent locations on this device for a faster booking flow.</p><button data-action="saved">Manage places →</button></article>
+        <article><i>₹</i><h3>Flexible payments</h3><p>Payment architecture ready for UPI, cards, cash, and wallet integrations.</p><button data-action="payments">View payment options →</button></article>
+        <article><i>↺</i><h3>Trip history</h3><p>Review rides created on this device, including status and estimated fare.</p><button data-action="history">See your trips →</button></article>
       </div>
     </section>
 
@@ -108,6 +134,8 @@
     <section class="cta"><div class="shell"><span>READY WHEN YOU ARE</span><h2>Your route could be<br>someone else’s too.</h2><button class="primary pale" data-scroll="matcher">Find your match <span>→</span></button></div></section>
   </main>
   <footer class="shell"><a class="brand" href="#top"><span class="brand-mark">S</span><span>Safar</span></a><p>Smarter shared journeys for modern cities.</p><div><a href="#how">How it works</a><a href="#safety">Safety</a><a href="#impact">Impact</a></div></footer>
+  <div class="modal" id="app-modal" hidden><div class="modal-backdrop" data-close></div><section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" data-close aria-label="Close">×</button><span class="section-no">SAFAR</span><h2 id="modal-title"></h2><div id="modal-content"></div></section></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="app.js"></script>
 </body>
 </html>
