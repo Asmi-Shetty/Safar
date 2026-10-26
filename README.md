@@ -6,7 +6,7 @@ Safar is a responsive travel and shared-mobility website concept focused on clea
 
 [safar-smart-rides.akshay-gupta0908.chatgpt.site](https://safar-smart-rides.akshay-gupta0908.chatgpt.site)
 
-## Current features
+## Current features implemented
 
 - Ride-now and scheduled-ride flows
 - Pickup and destination entry
