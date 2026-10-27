@@ -20,7 +20,7 @@ Safar is a responsive travel and shared-mobility website concept focused on clea
 - Animated loading and hero sequences
 - Keyboard-focus and reduced-motion support
 
-## Run locally
+## Run locally in system
 
 The project is a buildless static website. From the repository root, start any static file server for the `dist` directory.
 
