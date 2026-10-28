@@ -32,7 +32,7 @@ python -m http.server 8080 --directory dist
 
 Then open [http://localhost:8080](http://localhost:8080).
 
-Using Node.js:
+Using Node.js:-- 
 
 ```powershell
 npx serve dist
@@ -62,7 +62,7 @@ The current prototype stores trip history in the browser using `localStorage`. G
 
 This prototype does not currently provide production authentication, payment processing, driver dispatch, SMS/OTP delivery, or cross-device data synchronization.
 
-## Production integrations
+## Production integrations info-
 
 A production release would require:
 
