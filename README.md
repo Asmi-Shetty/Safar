@@ -62,7 +62,7 @@ The current prototype stores trip history in the browser using `localStorage`. G
 
 This prototype does not currently provide production authentication, payment processing, driver dispatch, SMS/OTP delivery, or cross-device data synchronization.
 
-## Production integrations info-
+## Production integrations information
 
 A production release would require:
 
