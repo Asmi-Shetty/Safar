@@ -64,7 +64,7 @@ This prototype does not currently provide production authentication, payment pro
 
 ## Production integrations information
 
-A production release would require:
+A production release would require the following:
 
 - A maps, routing, geocoding, and live-traffic provider
 - A secure backend and database
